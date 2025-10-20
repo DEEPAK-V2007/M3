@@ -14,13 +14,31 @@ To write a program to prepare EMI calculator using function without return type 
 6.	Stop the program.
 
 ## PROGRAM
-
-
+```
+#include<stdio.h>
+#include<math.h>
+void test(float principal,float rate,float year)
+{
+    float emi,n,m;
+    rate=rate/(12*100);
+    year=year*12;
+    n=pow(1+rate,year);
+    m=pow(1+rate,year)-1;
+    emi=(principal*rate*n)/m;
+    printf("Monthly EMI is= %.3f",emi);
+    return ;
+}
+int main()
+{
+    float principal,rate,year;
+    scanf("%f %f %f",&principal,&rate,&year);
+    test(principal,rate,year);
+    return 0;
+}
+```
 ## OUTPUT
 
-
-
-
+![alt text](<Screenshot 2025-10-20 111045.png>)
 
 ## RESULT
 
@@ -43,15 +61,28 @@ To write a C program to generate the Fibonacci series for the value 6.
 7.	Stop the program.
 
 ## PROGRAM
-
+```
+#include<stdio.h>
+int main()
+{
+    int N;
+    scanf("%d",&N);
+    printf("0 1 ");
+    N=N-2;
+    int N1=0,N2=1,temp;
+    for(int i=1;i<=N;i++)
+    {
+        temp=N1;
+        N1=N2;
+        N2=N2+temp;
+        printf("%d ",N2);
+    }
+    return 0;
+}
+```
 ## OUTPUT
 
-
-
-
-
-
-
+![alt text](<Screenshot 2025-10-20 111804.png>)
 
 ## RESULT
 Thus the program to generate the Fibonacci series for the value 6 has been executed successfully.
@@ -71,16 +102,24 @@ To write a C program to read n elements as input and print the last element of t
 5.	Stop the program.
 
 ## PROGRAM
-
+```
+#include<stdio.h>
+int main()
+{
+    int n,count=0;
+    scanf("%d",&n);
+    int arr[n];
+    for(int itr=0;itr<n;itr++)
+    {
+        scanf("%d",&arr[itr]);
+    }
+    printf("Last element: %d",arr[n-1]);
+    return 0;
+}
+```
 ## OUTPUT
 
-
-
-
-
-
-
-
+![alt text](<Screenshot 2025-10-20 113217.png>)
 
 ## RESULT
 Thus the program to read n elements as input and print the last element of the array has been executed successfully.
@@ -101,13 +140,31 @@ To write a C Program to count total number of positive elements in an array.
 6.	Stop the program.
 
 ## PROGRAM
-
-
+```
+#include<stdio.h>
+int main()
+{
+    int n,count=0;
+    scanf("%d",&n);
+    int arr[n];
+    for(int itr=0;itr<n;itr++)
+    {
+        scanf("%d",&arr[itr]);
+    }
+    for(int itr=0;itr<n;itr++)
+    {
+        if(arr[itr]>0)
+        {
+            count+=1;
+        }
+    }
+    printf("The total no of positive elements: %d",count);
+    return 0;
+}
+```
 ## OUTPUT
 
-
-
-
+![alt text](<Screenshot 2025-10-20 112936.png>)
 
 ## RESULT
 Thus the program to count total number of positive elements in an array has been executed successfully.
@@ -137,10 +194,35 @@ To write a C program to replace all even elements with 'E' in one dimensional ar
  Print the updated array after replacements.
 
 ## Program:
-
+```
+#include<stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int arr[100];
+    for(int itr=0;itr<n;itr++)
+    {
+        scanf("%d",&arr[itr]);
+    }
+    printf("After replacing even elements with E:");
+    for(int itr=0;itr<n;itr++)
+    {
+        if(arr[itr]%2==0)
+        {
+            printf("E ");
+        }
+        else
+        {
+            printf("%d ",arr[itr]);
+        }
+    }
+    return 0;
+}
+```
 ## Output:
- 
 
+![alt text](<Screenshot 2025-10-20 115009.png>)
 
 ## Result:
 
